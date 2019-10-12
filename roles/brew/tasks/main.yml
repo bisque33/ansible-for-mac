@@ -1,0 +1,53 @@
+# https://docs.ansible.com/ansible/2.7/modules/homebrew_tap_module.html
+- name: Homebrew tap
+  homebrew_tap:
+    name:
+      - homebrew/core
+      - homebrew/cask
+      - heroku/brew
+      - tilfin/aws
+    state: present
+
+# https://docs.ansible.com/ansible/2.7/modules/homebrew_module.html
+- name: Update Homebrew
+  homebrew:
+    update_homebrew: yes
+
+# https://docs.ansible.com/ansible/2.7/modules/homebrew_module.html
+- name: Install Homebrew Packages
+  homebrew:
+    name: 
+      - awscli
+      - ansible
+      - vim
+    state: present
+
+- name: Install yarn
+  homebrew:
+    name: yarn
+    state: present
+    install_options: --ignore-dependencies
+
+# https://docs.ansible.com/ansible/2.7/modules/homebrew_cask_module.html
+- name: Install Homebrew Cask Packages
+  homebrew_cask:
+    name: 
+      - alfred
+      - iterm2
+      - google-cloud-sdk
+      - graphql-playground
+      - rdm
+      - whichspace # メニューバーにDisplay番号を表示する
+    state: present
+
+
+# TODO: brew doctor の結果をstdoutする
+
+# - name: Health check Homebrew
+#   shell: |
+#     brew doctor
+#     exit 0
+#   register: doctor
+
+# - debug:
+#     var: "{{ doctor.stdout_lines }}"
