@@ -1,0 +1,4 @@
+- name: Download fisher
+  get_url:
+    url: https://git.io/fisher
+    dest: ~/.config/fish/functions/fisher.fish

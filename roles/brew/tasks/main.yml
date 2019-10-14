@@ -19,6 +19,9 @@
     name: 
       - awscli
       - ansible
+      - direnv
+      - fish
+      - swrole
       - vim
     state: present
 
