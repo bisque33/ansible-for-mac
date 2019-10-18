@@ -17,8 +17,10 @@
 - name: Install Homebrew Packages
   homebrew:
     name: 
+      - anyenv
       - awscli
       - ansible
+      - berglas # https://github.com/GoogleCloudPlatform/berglas
       - direnv
       - fish
       - swrole
@@ -36,7 +38,7 @@
   homebrew_cask:
     name: 
       - alfred
-      - iterm2
+      # - iterm2
       - google-cloud-sdk
       - graphql-playground
       - rdm
