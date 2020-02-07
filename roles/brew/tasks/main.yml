@@ -16,7 +16,7 @@
 # https://docs.ansible.com/ansible/2.7/modules/homebrew_module.html
 - name: Install Homebrew Packages
   homebrew:
-    name: 
+    name:
       - anyenv
       - awscli
       - ansible
@@ -36,16 +36,9 @@
 # https://docs.ansible.com/ansible/2.7/modules/homebrew_cask_module.html
 - name: Install Homebrew Cask Packages
   homebrew_cask:
-    name: 
-      - alfred
-      # - iterm2
+    name:
       - google-cloud-sdk
-      - graphql-playground
-      - rdm
-      - whichspace # メニューバーにDisplay番号を表示する
     state: present
-
-
 # TODO: brew doctor の結果をstdoutする
 
 # - name: Health check Homebrew
